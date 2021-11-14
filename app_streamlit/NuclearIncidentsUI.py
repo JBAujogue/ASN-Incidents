@@ -97,7 +97,7 @@ if 'data' not in st.session_state:
     st.session_state.entity_classifier_interpretated = None
     st.session_state.correlateur = None
     st.session_state.nlp = None
-    st.session_state.nlp_en = None
+    #st.session_state.nlp_en = None
 
     st.session_state.doc_name = 'incident'
     st.session_state.n_docs = None
@@ -112,7 +112,7 @@ if st.session_state.data is None :
     st.session_state.n_docs = data.shape[0]
 	
     st.session_state.nlp = spacy.load('fr_dep_news_trf', disable = ['ner'])
-    st.session_state.nlp_en = spacy.load('en_core_web_trf')
+    #st.session_state.nlp_en = spacy.load('en_core_web_trf')
 
     path_to_clf = os.path.join(path_to_save, 'text_classifier.pk')
     with open(path_to_clf, 'rb') as file: 
@@ -163,8 +163,8 @@ with col_doc:
 
         # perform NLU
         doc = st.session_state.nlp(text)
-        doc_en = st.session_state.nlp_en(text)
-        doc = shift_ents(doc, doc_en, labels = ['GPE', 'DATE'])
+        #doc_en = st.session_state.nlp_en(text)
+        #doc = shift_ents(doc, doc_en, labels = ['GPE', 'DATE'])
 
         # compute htmls
         st.session_state.text_html = get_html(text)
