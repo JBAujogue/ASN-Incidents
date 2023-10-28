@@ -1,8 +1,0 @@
-name: cp_paperless
-channels:
-  - defaults
-dependencies:
-  - python=3.11.5
-  - pip=23.2.1
-  - pip:
-    - poetry==1.6.1
