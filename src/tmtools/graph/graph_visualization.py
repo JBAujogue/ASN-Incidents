@@ -49,7 +49,7 @@ def plot_graph_streamlit(graph, node_label = 'word', edge_label = 'text'):
     nodes = [
         Node(id = graph.nodes[n]['id'],
              label = graph.nodes[n][node_label],
-             size = 300,
+             size = 15,
              color = (pos2color[graph.nodes[n]['pos']]) if graph.nodes[n]['pos'] in pos2color else '#50ebb2')
         for n in graph.nodes
     ]
@@ -65,6 +65,7 @@ def plot_graph_streamlit(graph, node_label = 'word', edge_label = 'text'):
         width = 2000, 
         height = 800, 
         directed = True,
+        physics = True, 
         nodeHighlightBehavior = True, 
         highlightColor = "#F7A7A6", # or "blue"
         collapsible = True,
